@@ -1,0 +1,16 @@
+# Local work and reports produced by the agents
+reports/
+mutants/
+.stryker-tmp/
+
+# Editors and system
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Tools
+node_modules/
+.venv/
+__pycache__/
+*.tmp-sync
