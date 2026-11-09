@@ -156,6 +156,10 @@ Run the script with `--dry-run` first, read what it would write, then run it for
 |---|---|
 | [`install-agents`](skills/install-agents/SKILL.md) | Install or update the agents of this repository into Claude Code, Codex, Gemini CLI or Copilot CLI, with a dry run, backups and tests |
 
+## Contributing
+
+The owner is the only one who pushes directly to `main`. Requests go through issues and changes through pull requests: see [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
+
 ## License
 
 [MIT](LICENSE)

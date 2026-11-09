@@ -1,0 +1,17 @@
+name: Bug in an agent or in the install script
+description: Something does not work as written (an agent behaves against its rules, the install script fails or writes a wrong file).
+labels: ["bug"]
+body:
+  - type: input
+    id: which
+    attributes:
+      label: Which agent, skill or file?
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened, and what did you expect?
+      description: Steps, assistant used (Claude Code, Codex, Gemini CLI, Copilot CLI), and the output or the file that is wrong. Do not paste secrets.
+    validations:
+      required: true

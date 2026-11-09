@@ -1,0 +1,24 @@
+name: Change request or new agent idea
+description: Ask for a change to an agent, a skill or the docs, or propose a new agent. Nothing is changed without an issue.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What do you want?
+      description: Which agent or skill, and what should change (or what the new agent should do).
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: The problem it solves and an example of a project where you need it.
+    validations:
+      required: true
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Pull request
+      options:
+        - label: I will open a pull request once the owner agrees

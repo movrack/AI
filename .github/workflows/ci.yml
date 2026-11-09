@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: actions/setup-python@v5.3.0
+        with:
+          python-version: "3.12"
+      - name: Unit tests of the install script
+        run: python3 -m unittest discover skills/install-agents/tests -v
+      - name: Every agent converts (dry run in a temporary home)
+        run: |
+          export HOME="$(mktemp -d)"
+          mkdir -p "$HOME/.claude" "$HOME/.codex" "$HOME/.gemini" "$HOME/.copilot"
+          python3 skills/install-agents/scripts/sync_agents.py --dry-run
+      - name: Agents stay generic and clean
+        run: |
+          set -e
+          if grep -rniE "/Users/|ha-ccode|\.ssh/" agents skills README.md README.fr.md; then
+            echo "A local path or host appears in the repository"; exit 1
+          fi
+          for f in agents/*.md; do
+            grep -q "^# Name:" "$f" || { echo "$f has no '# Name:' comment"; exit 1; }
+            grep -q "Ground rules (shared by all agents)" "$f" || { echo "$f misses the ground rules"; exit 1; }
+          done

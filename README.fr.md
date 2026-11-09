@@ -156,6 +156,10 @@ Lancez d'abord le script avec `--dry-run`, lisez ce qu'il écrirait, puis lancez
 |---|---|
 | [`install-agents`](skills/install-agents/SKILL.md) | Installer ou mettre à jour les agents de ce dépôt dans Claude Code, Codex, Gemini CLI ou Copilot CLI, avec une simulation, des sauvegardes et des tests |
 
+## Contribuer
+
+Le propriétaire est le seul à pousser directement sur `main`. Les demandes passent par des issues et les modifications par des pull requests : voir [CONTRIBUTING.md](CONTRIBUTING.md) et [SECURITY.md](SECURITY.md).
+
 ## Licence
 
 [MIT](LICENSE)
