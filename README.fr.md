@@ -155,6 +155,7 @@ Lancez d'abord le script avec `--dry-run`, lisez ce qu'il écrirait, puis lancez
 | Compétence | Usage |
 |---|---|
 | [`install-agents`](skills/install-agents/SKILL.md) | Installer ou mettre à jour les agents de ce dépôt dans Claude Code, Codex, Gemini CLI ou Copilot CLI, avec une simulation, des sauvegardes et des tests |
+| [`argus`](agents/argus.md) | Triage des tickets : complétude d’un bug ou d’une demande, recherche de doublon et de fonction existante, étiquettes de triage et un commentaire | étiquettes et commentaires sur les tickets | « fais le triage des tickets » |
 
 ## Contribuer
 
